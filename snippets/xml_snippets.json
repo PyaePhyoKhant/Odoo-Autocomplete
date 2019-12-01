@@ -1,0 +1,9 @@
+{
+	"test_xml": {
+		"prefix": "test_xml",
+		"body": [
+			"Test! XML"
+		],
+		"description": "testing"
+	}
+}

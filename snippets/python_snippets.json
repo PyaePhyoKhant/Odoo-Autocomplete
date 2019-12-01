@@ -1,0 +1,9 @@
+{
+	"test_python": {
+		"prefix": "test_python",
+		"body": [
+			"Test! Python"
+		],
+		"description": "testing"
+	}
+}
