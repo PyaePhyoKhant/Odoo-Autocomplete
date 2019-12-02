@@ -9,10 +9,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 			const odomain = new vscode.CompletionItem('odomain');
 			odomain.insertText = new vscode.SnippetString("('$1', '$2', $3)");
+			const osearch = new vscode.CompletionItem('osearch');
+			osearch.insertText = new vscode.SnippetString("self.env['$1'].search([$2])");
 
 			// return all completion items as array
 			return [
-				odomain
+				odomain, osearch
 			];
 		}
 	});
