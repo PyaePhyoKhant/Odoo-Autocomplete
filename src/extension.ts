@@ -38,11 +38,20 @@ export function activate(context: vscode.ExtensionContext) {
 			const before = new vscode.CompletionItem('before');
 			const after = new vscode.CompletionItem('after');
 
+			// others
+			const pattributes = new vscode.CompletionItem('pattributes');
+			pattributes.insertText = new vscode.SnippetString('position="attributes"');
+			const pbefore = new vscode.CompletionItem('pbefore');
+			pbefore.insertText = new vscode.SnippetString('position="before"');
+			const pafter = new vscode.CompletionItem('pafter');
+			pafter.insertText = new vscode.SnippetString('position="after"');
+
 			// return all completion items as array
 			return [
 				attribute, record, field, button, xpath,
 				id, model, name, positionn,
-				attributes, before, after
+				attributes, before, after,
+				pattributes, pbefore, pafter
 			];
 		}
 	});
