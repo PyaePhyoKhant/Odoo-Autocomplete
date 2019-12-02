@@ -2,7 +2,8 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 
-	let python_provider = vscode.languages.registerCompletionItemProvider('python', {
+	let python_provider = vscode.languages.registerCompletionItemProvider(
+		{ scheme: 'file', language: 'python' }, {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
