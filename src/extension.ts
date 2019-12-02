@@ -16,7 +16,8 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 
-	let xml_provider = vscode.languages.registerCompletionItemProvider('xml', {
+	let xml_provider = vscode.languages.registerCompletionItemProvider(
+		{ scheme: 'file', language: 'xml' }, {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
