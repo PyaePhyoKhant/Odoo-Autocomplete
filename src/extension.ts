@@ -32,6 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 			const model = new vscode.CompletionItem('model');
 			const name = new vscode.CompletionItem('name');
 			const positionn = new vscode.CompletionItem('position');
+			positionn.insertText = new vscode.SnippetString('position="$1"');
 
 			// values
 			const attributes = new vscode.CompletionItem('attributes');
