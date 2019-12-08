@@ -24,24 +24,20 @@ export function activate(context: vscode.ExtensionContext) {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
+			// simple common words in odoo xml
 			// tags
-			const attribute = new vscode.CompletionItem('attribute');
-			const record = new vscode.CompletionItem('record');
-			const field = new vscode.CompletionItem('field');
-			const button = new vscode.CompletionItem('button');
-			const xpath = new vscode.CompletionItem('xpath');
+			var tags_values:string[] = ['attribute', 'record', 'field', 'field', 'button', 'xpath'];
+			var tags = tags_values.map(x => new vscode.CompletionItem(x));
 			
 			// keys
-			const id = new vscode.CompletionItem('id');
-			const model = new vscode.CompletionItem('model');
-			const name = new vscode.CompletionItem('name');
+			var keys_values:string[] = ['id', 'model', 'name'];
+			var keys = keys_values.map(x => new vscode.CompletionItem(x));
 			const positionn = new vscode.CompletionItem('position');
 			positionn.insertText = new vscode.SnippetString('position="$1"');
 
 			// values
-			const attributes = new vscode.CompletionItem('attributes');
-			const before = new vscode.CompletionItem('before');
-			const after = new vscode.CompletionItem('after');
+			var values_values:string[] = ['attributes', 'before', 'after'];
+			var values = values_values.map(x => new vscode.CompletionItem(x));
 
 			// others
 			const pattributes = new vscode.CompletionItem('pattributes');
@@ -53,11 +49,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 			// return all completion items as array
 			return [
-				attribute, record, field, button, xpath,
-				id, model, name, positionn,
-				attributes, before, after,
+				positionn,
 				pattributes, pbefore, pafter
-			];
+			].concat(tags, keys, values);
 		}
 	});
 
