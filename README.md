@@ -1,6 +1,19 @@
 # Odoo Autocomplete
 
-This vscode extension add snippets and intellisense in python and xml files for odoo. * [Odoo](https://www.odoo.com/) is ERP system implemented with python.
+This vscode extension add snippets and intellisense in python and xml files for odoo. [Odoo](https://www.odoo.com/) is ERP system implemented with python.
+
+## Installation
+
+This extension is still in development and so it is not available yet in vscode extension marketplace. So, manual installation is necessary.
+
+1. Make sure you have [Node.js](https://nodejs.org/en/) installed and then install necessary node packages for this extension with
+`npm install`
+
+2. Install `vsce` via `npm install -g vsce`
+
+3. `vsce package` which will create .vsix file.
+
+4. Finally, install with `code --install-extension <vsix-file-name>.vsix`
 
 ## Features
 
