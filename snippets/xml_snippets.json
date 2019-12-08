@@ -25,5 +25,28 @@
 			"</field>"
 		],
 		"description": "Inherit field via position before"
+	},
+	"Record": {
+		"prefix": "orecord",
+		"body": [
+			"<record id=\"$1\" model=\"$2\">",
+            "\t<field name=\"name\">$3</field>",
+        	"</record>"
+		],
+		"description": "Create record"
+	},
+	"Field Short": {
+		"prefix": "ofshort",
+		"body": [
+            "<field name=\"$1\"/>"
+		],
+		"description": "Add field with closing"
+	},
+	"Field Long": {
+		"prefix": "oflong",
+		"body": [
+            "<field name=\"$1\">$2</field>"
+		],
+		"description": "Add field without closing"
 	}
 }
