@@ -1,9 +1,29 @@
 {
-	"test_xml": {
-		"prefix": "test_xml",
+	"Position attributes": {
+		"prefix": "ofattributes",
 		"body": [
-			"Test! XML"
+			"<field name=\"$1\" position=\"attributes\">",
+			"\t<attribute name=\"$2\">$3</attribute>",
+			"</field>"
 		],
-		"description": "testing"
+		"description": "Inherit field via position attributes"
+	},
+	"Position after": {
+		"prefix": "ofafter",
+		"body": [
+			"<field name=\"$1\" position=\"after\">",
+			"\t<field name=\"$2\"/>",
+			"</field>"
+		],
+		"description": "Inherit field via position after"
+	},
+	"Position before": {
+		"prefix": "ofbefore",
+		"body": [
+			"<field name=\"$1\" position=\"before\">",
+			"\t<field name=\"$2\"/>",
+			"</field>"
+		],
+		"description": "Inherit field via position before"
 	}
 }
