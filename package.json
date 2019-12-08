@@ -3,6 +3,11 @@
 	"displayName": "Odoo Autocomplete",
 	"description": "Snippets and Intellisense for Odoo",
 	"version": "0.0.1",
+	"publisher": "pyaepk",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/PyaePhyoKhant/Odoo-Autocomplete"
+	},
 	"engines": {
 		"vscode": "^1.40.0"
 	},
@@ -42,5 +47,8 @@
 		"typescript": "^3.6.4",
 		"tslint": "^5.20.0",
 		"vscode-test": "^1.2.2"
+	},
+	"__metadata": {
+		"publisherDisplayName": "Pyae Phyo Khant"
 	}
 }
