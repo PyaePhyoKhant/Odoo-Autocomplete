@@ -57,7 +57,7 @@
 			"\t<field name=\"model\">$2.$3</field>",
 			"\t<field name=\"inherit_id\" ref=\"$2.$1\"/>",
 			"\t<field name=\"arch\" type=\"xml\">",
-			"\t\t$4",
+			"\t\t$0",
 			"\t</field>",
 			"</record>"
 		],
