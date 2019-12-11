@@ -1,9 +1,15 @@
 {
-	"test_python": {
-		"prefix": "test_python",
+	"Model Inherit": {
+		"prefix": "omodeli",
 		"body": [
-			"Test! Python"
+			"from odoo import api, fields, models",
+			"",
+			"",
+			"class $1(models.Model):",
+			"\tinherit='$2'",
+			"",
+			"\t$3"
 		],
-		"description": "testing"
+		"description": "Inherit model"
 	}
 }
