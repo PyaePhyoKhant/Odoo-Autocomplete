@@ -3,7 +3,7 @@
 		"prefix": "ofattributes",
 		"body": [
 			"<field name=\"$1\" position=\"attributes\">",
-			"\t<attribute name=\"$2\">$3</attribute>",
+			"\t<attribute name=\"$2\">$0</attribute>",
 			"</field>"
 		],
 		"description": "Inherit field via position attributes"
@@ -45,7 +45,7 @@
 	"Field Long": {
 		"prefix": "oflong",
 		"body": [
-            "<field name=\"$1\">$2</field>"
+            "<field name=\"$1\">$0</field>"
 		],
 		"description": "Add field without closing"
 	},
@@ -69,5 +69,12 @@
 			"<attribute name=\"$1\">$0</attribute>"	
 		],
 		"description": "Add another attribute inherit inside field inherit"
+	},
+	"Domain": {
+		"prefix": "odomain",
+		"body": [
+			"('$1', '$2', $3)"
+		],
+		"description": "Add domain"
 	}
 }
