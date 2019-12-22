@@ -62,5 +62,12 @@
 			"</record>"
 		],
 		"description": "Inherit form"
+	},
+	"Attribute": {
+		"prefix": "oattribute",
+		"body": [
+			"<attribute name=\"$1\">$0</attribute>"	
+		],
+		"description": "Add another attribute inherit inside field inherit"
 	}
 }
