@@ -24,5 +24,22 @@
 			"\t$3"
 		],
 		"description": "Create new model"
+	},
+	"Create Method": {
+		"prefix": "ocreate",
+		"body": [
+			"@api.model",
+			"def create(self, vals):",
+			"\t$1super().create(vals)"
+		],
+		"description": "Create method"
+	},
+	"Write Method": {
+		"prefix": "owrite",
+		"body": [
+			"def write(self, vals):",
+			"\t$1super().write(vals)"
+		],
+		"description": "Write method"
 	}
 }
