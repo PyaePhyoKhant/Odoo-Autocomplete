@@ -6,7 +6,7 @@
 			"",
 			"",
 			"class $1(models.Model):",
-			"\tinherit='$2'",
+			"\t_inherit = '$2'",
 			"",
 			"\t$3"
 		],
