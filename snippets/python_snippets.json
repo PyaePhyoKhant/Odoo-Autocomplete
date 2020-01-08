@@ -11,5 +11,18 @@
 			"\t$3"
 		],
 		"description": "Inherit model"
+	},
+	"Create New Model": {
+		"prefix": "omodel",
+		"body": [
+			"from odoo import api, fields, models",
+			"",
+			"",
+			"class $1(models.Model):",
+			"\t_name = '$2'",
+			"",
+			"\t$3"
+		],
+		"description": "Create new model"
 	}
 }
