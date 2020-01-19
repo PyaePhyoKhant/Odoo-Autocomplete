@@ -77,6 +77,36 @@
 		],
 		"description": "Inherit tree"
 	},
+	"Tree View": {
+		"prefix": "otree",
+		"body": [
+			"<record id=\"$1\" model=\"ir.ui.view\">",
+			"\t<field name=\"name\">$2.$3.tree.inherit</field>",
+			"\t<field name=\"model\">$2.$3</field>",
+			"\t<field name=\"arch\" type=\"xml\">",
+			"\t\t<tree string=\"$4\">",
+			"\t\t\t$0",
+			"\t\t</tree>",
+			"\t</field>",
+			"</record>"
+		],
+		"description": "New tree view"
+	},
+	"Form View": {
+		"prefix": "oform",
+		"body": [
+			"<record id=\"$1\" model=\"ir.ui.view\">",
+			"\t<field name=\"name\">$2.$3.form.inherit</field>",
+			"\t<field name=\"model\">$2.$3</field>",
+			"\t<field name=\"arch\" type=\"xml\">",
+			"\t\t<form string=\"$4\">",
+			"\t\t\t$0",
+			"\t\t</form>",
+			"\t</field>",
+			"</record>"
+		],
+		"description": "New form view"
+	},
 	"Attribute": {
 		"prefix": "oattribute",
 		"body": [
