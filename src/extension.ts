@@ -26,11 +26,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
-			// simple common words in odoo xml
-			// tags
-			var tags_values:string[] = ['attribute', 'record', 'field', 'button', 'xpath', 'tree', 'form', 'group', 'sheet', 'notebook', 'page', 'search', 'label'];
-			var tags = tags_values.map(x => new vscode.CompletionItem(x));
-			
 			// keys
 			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
 			var keys = keys_values.map(x => new vscode.CompletionItem(x));
@@ -53,9 +48,23 @@ export function activate(context: vscode.ExtensionContext) {
 			// return all completion items as array
 			return [
 				pattributes, pbefore, pafter
-			].concat(tags, keys, values);
+			].concat(keys, values);
 		}
 	});
 
-	context.subscriptions.push(python_provider, xml_provider);
+	let xml_tags_provider = vscode.languages.registerCompletionItemProvider(
+		{ scheme: 'file', language: 'xml' }, {
+
+		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+
+			// tags
+			var tags_values:string[] = ['attribute', 'record', 'field', 'button', 'xpath', 'tree', 'form', 'group', 'sheet', 'notebook', 'page', 'search', 'label'];
+			var tags = tags_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Keyword));
+
+			// return all completion items as array
+			return tags;
+		},
+	}, '<');
+
+	context.subscriptions.push(python_provider, xml_provider, xml_tags_provider);
 }
