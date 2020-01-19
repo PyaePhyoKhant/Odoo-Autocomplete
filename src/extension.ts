@@ -66,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 			// keys
 			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
-			var keys = keys_values.map(x => new vscode.CompletionItem(x), vscode.CompletionItemKind.Property);
+			var keys = keys_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
 			for (let k of keys) {
 				k.insertText = new vscode.SnippetString(k.label + '="$1"');
 			}
