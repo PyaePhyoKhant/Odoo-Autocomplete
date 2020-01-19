@@ -26,13 +26,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
-			// keys
-			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
-			var keys = keys_values.map(x => new vscode.CompletionItem(x));
-			for (let k of keys) {
-				k.insertText = new vscode.SnippetString(k.label + '="$1"');
-			}
-
 			// values
 			var values_values:string[] = ['attributes', 'before', 'after'];
 			var values = values_values.map(x => new vscode.CompletionItem(x));
@@ -48,7 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// return all completion items as array
 			return [
 				pattributes, pbefore, pafter
-			].concat(keys, values);
+			].concat(values);
 		}
 	});
 
@@ -66,5 +59,22 @@ export function activate(context: vscode.ExtensionContext) {
 		},
 	}, '<');
 
-	context.subscriptions.push(python_provider, xml_provider, xml_tags_provider);
+	let xml_keys_provider = vscode.languages.registerCompletionItemProvider(
+		{ scheme: 'file', language: 'xml' }, {
+
+		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+
+			// keys
+			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
+			var keys = keys_values.map(x => new vscode.CompletionItem(x), vscode.CompletionItemKind.Property);
+			for (let k of keys) {
+				k.insertText = new vscode.SnippetString(k.label + '="$1"');
+			}
+
+			// return all completion items as array
+			return keys;
+		},
+	}, ' ');
+
+	context.subscriptions.push(python_provider, xml_provider, xml_tags_provider, xml_keys_provider);
 }
