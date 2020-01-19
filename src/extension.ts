@@ -26,10 +26,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
-			// values
-			var values_values:string[] = ['attributes', 'before', 'after'];
-			var values = values_values.map(x => new vscode.CompletionItem(x));
-
 			// others
 			const pattributes = new vscode.CompletionItem('pattributes');
 			pattributes.insertText = new vscode.SnippetString('position="attributes"');
@@ -41,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// return all completion items as array
 			return [
 				pattributes, pbefore, pafter
-			].concat(values);
+			]
 		}
 	});
 
@@ -76,5 +72,19 @@ export function activate(context: vscode.ExtensionContext) {
 		},
 	}, ' ');
 
-	context.subscriptions.push(python_provider, xml_provider, xml_tags_provider, xml_keys_provider);
+	let xml_values_provider = vscode.languages.registerCompletionItemProvider(
+		{ scheme: 'file', language: 'xml' }, {
+
+		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+
+			// values
+			var values_values:string[] = ['attributes', 'before', 'after'];
+			var values = values_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Value));
+
+			// return all completion items as array
+			return values;
+		},
+	}, '"');
+
+	context.subscriptions.push(python_provider, xml_provider, xml_tags_provider, xml_keys_provider, xml_values_provider);
 }
