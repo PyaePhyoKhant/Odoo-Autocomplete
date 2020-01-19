@@ -32,10 +32,11 @@ export function activate(context: vscode.ExtensionContext) {
 			var tags = tags_values.map(x => new vscode.CompletionItem(x));
 			
 			// keys
-			var keys_values:string[] = ['id', 'model', 'name', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
+			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
 			var keys = keys_values.map(x => new vscode.CompletionItem(x));
-			const positionn = new vscode.CompletionItem('position');
-			positionn.insertText = new vscode.SnippetString('position="$1"');
+			for (let k of keys) {
+				k.insertText = new vscode.SnippetString(k.label + '="$1"');
+			}
 
 			// values
 			var values_values:string[] = ['attributes', 'before', 'after'];
@@ -51,7 +52,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 			// return all completion items as array
 			return [
-				positionn,
 				pattributes, pbefore, pafter
 			].concat(tags, keys, values);
 		}
