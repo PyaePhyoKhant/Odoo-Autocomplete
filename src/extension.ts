@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 			// simple common words in odoo xml
 			// tags
-			var tags_values:string[] = ['attribute', 'record', 'field', 'field', 'button', 'xpath'];
+			var tags_values:string[] = ['attribute', 'record', 'field', 'button', 'xpath', 'tree', 'form', 'group', 'sheet', 'notebook', 'page', 'search', 'label'];
 			var tags = tags_values.map(x => new vscode.CompletionItem(x));
 			
 			// keys
