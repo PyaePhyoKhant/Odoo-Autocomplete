@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 			var tags = tags_values.map(x => new vscode.CompletionItem(x));
 			
 			// keys
-			var keys_values:string[] = ['id', 'model', 'name'];
+			var keys_values:string[] = ['id', 'model', 'name', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
 			var keys = keys_values.map(x => new vscode.CompletionItem(x));
 			const positionn = new vscode.CompletionItem('position');
 			positionn.insertText = new vscode.SnippetString('position="$1"');
