@@ -46,6 +46,11 @@ export function activate(context: vscode.ExtensionContext) {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
+			let linePrefix = document.lineAt(position).text.substr(0, position.character);
+				if (!linePrefix.endsWith('<')) {
+					return undefined;
+				}
+
 			// tags
 			var tags_values:string[] = ['attribute', 'record', 'field', 'button', 'xpath', 'tree', 'form', 'group', 'sheet', 'notebook', 'page', 'search', 'label'];
 			var tags = tags_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Keyword));
@@ -59,6 +64,11 @@ export function activate(context: vscode.ExtensionContext) {
 		{ scheme: 'file', language: 'xml' }, {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+
+			let linePrefix = document.lineAt(position).text.substr(0, position.character);
+				if (!linePrefix.endsWith(' ')) {
+					return undefined;
+				}
 
 			// keys
 			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
@@ -76,6 +86,11 @@ export function activate(context: vscode.ExtensionContext) {
 		{ scheme: 'file', language: 'xml' }, {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+
+			let linePrefix = document.lineAt(position).text.substr(0, position.character);
+				if (!linePrefix.endsWith('"')) {
+					return undefined;
+				}
 
 			// values
 			var values_values:string[] = ['attributes', 'before', 'after'];
