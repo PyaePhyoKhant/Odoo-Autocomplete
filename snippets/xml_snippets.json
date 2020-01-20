@@ -36,14 +36,14 @@
 		"description": "Create record"
 	},
 	"Field Short": {
-		"prefix": "ofshort",
+		"prefix": "ofield",
 		"body": [
             "<field name=\"$1\"/>"
 		],
 		"description": "Add field with closing"
 	},
 	"Field Long": {
-		"prefix": "oflong",
+		"prefix": "ofieldl",
 		"body": [
             "<field name=\"$1\">$0</field>"
 		],
