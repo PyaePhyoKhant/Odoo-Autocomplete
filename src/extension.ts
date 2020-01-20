@@ -37,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// return all completion items as array
 			return [
 				pattributes, pbefore, pafter
-			]
+			];
 		}
 	});
 
@@ -47,9 +47,9 @@ export function activate(context: vscode.ExtensionContext) {
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
 			let linePrefix = document.lineAt(position).text.substr(0, position.character);
-				if (!linePrefix.endsWith('<')) {
-					return undefined;
-				}
+			if (!linePrefix.endsWith('<')) {
+				return undefined;
+			}
 
 			// tags
 			var tags_values:string[] = ['attribute', 'record', 'field', 'button', 'xpath', 'tree', 'form', 'group', 'sheet', 'notebook', 'page', 'search', 'label'];
@@ -66,12 +66,12 @@ export function activate(context: vscode.ExtensionContext) {
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
 			let linePrefix = document.lineAt(position).text.substr(0, position.character);
-				if (!linePrefix.endsWith(' ')) {
-					return undefined;
-				}
+			if (!linePrefix.endsWith(' ')) {
+				return undefined;
+			}
 
 			// keys
-			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action'];
+			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs'];
 			var keys = keys_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
 			for (let k of keys) {
 				k.insertText = new vscode.SnippetString(k.label + '="$1"');
@@ -88,13 +88,18 @@ export function activate(context: vscode.ExtensionContext) {
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
 			let linePrefix = document.lineAt(position).text.substr(0, position.character);
-				if (!linePrefix.endsWith('"')) {
-					return undefined;
-				}
-
-			// values
-			var values_values:string[] = ['attributes', 'before', 'after'];
-			var values = values_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Value));
+			if (!linePrefix.endsWith('"')) {
+				return undefined;
+			}
+			var values_values:string[];
+			var values;
+			if (linePrefix.endsWith('position="')) {
+				values_values = ['attributes', 'before', 'after', 'inside', 'replace', 'move'];
+				values = values_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Value));
+			} else if (linePrefix.endsWith('widget="')) {
+				values_values = ['many2many_tags', 'many2many', 'progressbar', 'handle', 'date', 'datetime', 'float_time', 'monetary'];
+				values = values_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Value));
+			}
 
 			// return all completion items as array
 			return values;
