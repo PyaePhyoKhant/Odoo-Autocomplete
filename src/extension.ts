@@ -71,10 +71,17 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			// keys
-			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'readonly', 'nolabel', 'invisible', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs'];
-			var keys = keys_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
+			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs'];
+			var keys_one:string[] = ['readonly', 'nolabel', 'invisible'];
+			var postfix:string = '';
+			var keys = keys_values.concat(keys_one).map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
 			for (let k of keys) {
-				k.insertText = new vscode.SnippetString(k.label + '="$1"');
+				if (keys_values.includes(k.label)) {
+					postfix = '="$1"';
+				} else if (keys_one.includes(k.label)) {
+					postfix = '="1"';
+				}
+				k.insertText = new vscode.SnippetString(k.label + postfix);
 			}
 
 			// return all completion items as array
