@@ -120,5 +120,14 @@
 			"('$1', '$2', $3)"
 		],
 		"description": "Add domain"
+	},
+	"XPath": {
+		"prefix": "oxpath",
+		"body": [
+			"<xpath expr=\"$1\" position=\"$2\">",
+			"\t$0",
+			"</xpath>"
+		],
+		"description": "Inherit with xpath"
 	}
 }
