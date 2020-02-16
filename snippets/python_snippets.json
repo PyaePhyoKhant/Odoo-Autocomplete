@@ -157,5 +157,15 @@
 			"$1 = fields.Reference($0)"
 		],
 		"description": "Add reference field"
+	},
+	"API method": {
+		"prefix": "oroute",
+		"body": [
+			"@http.route('/$1', type='json', auth='${2:user}')",
+			"def $3(self, **kw):",
+			"\t$0",
+			"\treturn {}"
+		],
+		"description": "Add api route method"
 	}
 }
