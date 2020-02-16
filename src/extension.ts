@@ -64,12 +64,14 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			// keys
-			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs'];
+			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs', 'editable'];
 			var keys_one:string[] = ['readonly', 'nolabel', 'invisible'];
 			var postfix:string = '';
 			var keys = keys_values.concat(keys_one).map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
 			for (let k of keys) {
-				if (keys_values.includes(k.label)) {
+				if (k.label === 'editable') {
+					postfix = '="top"';
+				} else if (keys_values.includes(k.label)) {
 					postfix = '="$1"';
 				} else if (keys_one.includes(k.label)) {
 					postfix = '="1"';
