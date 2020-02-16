@@ -30,7 +30,9 @@
 		"body": [
 			"@api.model",
 			"def create(self, vals):",
-			"\t$1super().create(vals)"
+			"\tres = super().create(vals)",
+			"\t$0",
+			"\treturn res"
 		],
 		"description": "Create method"
 	},
@@ -38,7 +40,9 @@
 		"prefix": "owrite",
 		"body": [
 			"def write(self, vals):",
-			"\t$1super().write(vals)"
+			"\tres = super().write(vals)",
+			"\t$0",
+			"\treturn res"
 		],
 		"description": "Write method"
 	}
