@@ -45,5 +45,96 @@
 			"\treturn res"
 		],
 		"description": "Write method"
+	},
+	"Char Field": {
+		"prefix": "ofchar",
+		"body": [
+			"$1 = fields.Char($0)"
+		],
+		"description": "Add char field"
+	},
+	"Boolean Field": {
+		"prefix": "ofbool",
+		"body": [
+			"$1 = fields.Boolean($0)"
+		],
+		"description": "Add boolean field"
+	},
+	"Integer Field": {
+		"prefix": "ofint",
+		"body": [
+			"$1 = fields.Integer($0)"
+		],
+		"description": "Add integer field"
+	},
+	"Float Field": {
+		"prefix": "offloat",
+		"body": [
+			"$1 = fields.Float($0)"
+		],
+		"description": "Add float field"
+	},
+	"Text Field": {
+		"prefix": "oftext",
+		"body": [
+			"$1 = fields.Text($0)"
+		],
+		"description": "Add text field"
+	},
+	"Selection Field": {
+		"prefix": "ofsel",
+		"body": [
+			"$1 = fields.Selection($0)"
+		],
+		"description": "Add selection field"
+	},
+	"Html Field": {
+		"prefix": "ofhtml",
+		"body": [
+			"$1 = fields.Html($0)"
+		],
+		"description": "Add html field"
+	},
+	"Date Field": {
+		"prefix": "ofdate",
+		"body": [
+			"$1 = fields.Date($0)"
+		],
+		"description": "Add date field"
+	},
+	"Datetime Field": {
+		"prefix": "ofdatetime",
+		"body": [
+			"$1 = fields.Datetime($0)"
+		],
+		"description": "Add datetime field"
+	},
+	"Many2one Field": {
+		"prefix": "ofm2o",
+		"body": [
+			"$1 = fields.Many2one('$0')"
+		],
+		"description": "Add many2one field"
+	},
+	"One2many Field": {
+		"prefix": "ofo2m",
+		"body": [
+			"$1 = fields.One2many('$0')"
+		],
+		"description": "Add one2many field"
+	},
+	"Many2many Field": {
+		"prefix": "ofm2m",
+		"body": [
+			"$1 = fields.Many2many('$0')"
+		],
+		"description": "Add many2many field"
+	},
+	"Reference Field": {
+		"prefix": "ofref",
+		"body": [
+			"$1 = fields.Reference($0)"
+		],
+		"description": "Add reference field"
 	}
 }
