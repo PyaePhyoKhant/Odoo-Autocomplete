@@ -7,16 +7,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
-			const odomain = new vscode.CompletionItem('odomain');
-			odomain.insertText = new vscode.SnippetString("('$1', '$2', $3)");
-			const osearch = new vscode.CompletionItem('osearch');
-			osearch.insertText = new vscode.SnippetString("self.env['$1'].search([$2])");
-			const obrowse = new vscode.CompletionItem('obrowse');
-			obrowse.insertText = new vscode.SnippetString("self.env['$1'].browse($2)");
-
 			// return all completion items as array
 			return [
-				odomain, osearch, obrowse
+				
 			];
 		}
 	});

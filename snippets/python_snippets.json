@@ -1,4 +1,25 @@
 {
+	"Domain": {
+		"prefix": "odomain",
+		"body": [
+			"('$1', '$2', $0)"
+		],
+		"description": "Add domain"
+	},
+	"Env Search": {
+		"prefix": "osearch",
+		"body": [
+			"self.env['$1'].search([$0])"
+		],
+		"description": "Env search"
+	},
+	"Env Browse": {
+		"prefix": "obrowse",
+		"body": [
+			"self.env['$1'].browse([$0])"
+		],
+		"description": "Env browse"
+	},
 	"Model Inherit": {
 		"prefix": "omodeli",
 		"body": [
