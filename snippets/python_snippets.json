@@ -8,7 +8,7 @@
 			"class $1(models.Model):",
 			"\t_inherit = '$2'",
 			"",
-			"\t$3"
+			"\t$0"
 		],
 		"description": "Inherit model"
 	},
@@ -21,7 +21,7 @@
 			"class $1(models.Model):",
 			"\t_name = '$2'",
 			"",
-			"\t$3"
+			"\t$0"
 		],
 		"description": "Create new model"
 	},
