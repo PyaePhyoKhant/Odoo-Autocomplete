@@ -143,5 +143,16 @@
 			"<menu id=\"$1\" name=\"$2\" parent=\"$3\"/>"
 		],
 		"description": "Add child menu"
+	},
+	"Action": {
+		"prefix": "oaction",
+		"body": [
+			"<record id=\"$1\" model=\"ir.actions.act_window\">",
+    		"\t<field name=\"name\">$2</field>",
+			"\t<field name=\"res_model\">$3</field>",
+			"\t<field name=\"view_mode\">tree,form</field>",
+			"</record>"
+		],
+		"description": "Action"
 	}
 }
