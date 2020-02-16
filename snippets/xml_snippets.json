@@ -64,7 +64,7 @@
 		"description": "Inherit form"
 	},
 	"Tree Inherit": {
-		"prefix": "otreei",
+		"prefix": ["otreei", "olisti"],
 		"body": [
 			"<record id=\"$1\" model=\"ir.ui.view\">",
 			"\t<field name=\"name\">$2.$3.tree.inherit</field>",
@@ -78,7 +78,7 @@
 		"description": "Inherit tree"
 	},
 	"Tree View": {
-		"prefix": "otree",
+		"prefix": ["otree","olist"],
 		"body": [
 			"<record id=\"$1\" model=\"ir.ui.view\">",
 			"\t<field name=\"name\">$2.$3.tree</field>",
