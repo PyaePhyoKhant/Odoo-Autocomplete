@@ -27,6 +27,15 @@
 				"language": "xml",
 				"path": "./snippets/xml_snippets.json"
 			}
+		],
+		"languages": [
+			{
+				"id": "xml",
+				"extensions": [
+					".xml"
+				],
+				"configuration": "./xml-language-configuration.json"
+			}
 		]
 	},
 	"main": "./out/extension.js",
