@@ -105,7 +105,7 @@
 	"Selection Field": {
 		"prefix": "ofsel",
 		"body": [
-			"$1 = fields.Selection($0)"
+			"$1 = fields.Selection(${0:selection=})"
 		],
 		"description": "Add selection field"
 	},
