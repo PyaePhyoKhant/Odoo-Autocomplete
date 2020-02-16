@@ -129,5 +129,19 @@
 			"</xpath>"
 		],
 		"description": "Inherit with xpath"
+	},
+	"Root Menu": {
+		"prefix": "omroot",
+		"body": [
+			"<menu id=\"$1\" name=\"$2\"/>"
+		],
+		"description": "Add root menu"
+	},
+	"Child Menu": {
+		"prefix": "omchild",
+		"body": [
+			"<menu id=\"$1\" name=\"$2\" parent=\"$3\"/>"
+		],
+		"description": "Add child menu"
 	}
 }
