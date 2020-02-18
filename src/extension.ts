@@ -40,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
 			let linePrefix = document.lineAt(position).text.substr(0, position.character);
-			if (!linePrefix.endsWith('<')) {
+			if (!(linePrefix.endsWith('<') || linePrefix.endsWith('/'))) {
 				return undefined;
 			}
 
@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// return all completion items as array
 			return tags;
 		},
-	}, '<');
+	}, '<', '/');
 
 	let xml_keys_provider = vscode.languages.registerCompletionItemProvider(
 		{ scheme: 'file', language: 'xml' }, {
