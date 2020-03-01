@@ -71,6 +71,8 @@ export function activate(context: vscode.ExtensionContext) {
 			for (let k of keys) {
 				if (k.label === 'editable') {
 					postfix = '="top"';
+				} else if (k.label === 'attrs') {
+					postfix = '"{\'$1\': [(\'$2\', \'$3\', $4)$0]}"';
 				} else if (keys_values.includes(k.label)) {
 					postfix = '="$1"';
 				} else if (keys_one.includes(k.label)) {
