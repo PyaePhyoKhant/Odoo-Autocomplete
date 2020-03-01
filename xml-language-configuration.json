@@ -6,5 +6,5 @@
 		{ "open": "'", "close": "'" },
 		{ "open": "\"", "close": "\""},
 	],
-	"autoCloseBefore": ";:.,=}])> \n\t<"
+	"autoCloseBefore": ";:.,=}])> \n\t<'\""
 }
