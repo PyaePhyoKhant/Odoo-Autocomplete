@@ -17,6 +17,28 @@ This extension is still in development and so it is not available yet in vscode 
 
 ## Features
 
+### XML Autocomplete Keywords
+
+Autocomplete many common odoo keywords in xml.
+
+[video]
+
+List of currently supported keywords
+
+Tags: `attribute`, `record`, `field`, `button`, `xpath`, `tree`, `form`, `group`, `sheet`, `notebook`, `page`, `search`, `label`
+
+Keys: `id`, `model`, `name`, `position`, `string`, `colspan`, `col`, `states`, `class`, `type`, `for`, `action`, `widget`, `attrs`, `editable`, `readonly`, `nolabel`, `invisible`
+
+
+Special Keys:
+
+| Keys     | Values                                                                                                                          |
+|----------|---------------------------------------------------------------------------------------------------------------------------------|
+| attrs    | =" { ' ' : [ ( ' ', ' ', ) ] }"                                                                                                 |
+| editable | ="top"                                                                                                                          |
+| position | ="attributes" or "before" or "after" or <br> "inside" or "replace" or "move"                                                    |
+| widget   | ="many2many_tags" or "many2many" or <br> "progressbar" or "handle" or "date" or <br> "datetime" or "float_time" or "monetary"   |
+
 Currently, this extension contains following features in python and xml.
 
 Python
