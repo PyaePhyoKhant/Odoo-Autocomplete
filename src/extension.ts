@@ -64,10 +64,11 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			// keys
-			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs', 'editable', 'default_order'];
+			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs', 'editable', 'default_order', ''];
 			var keys_one:string[] = ['readonly', 'nolabel', 'invisible', 'noupdate'];
+			var keys_false:string[] = ['create', 'edit', 'delete'];
 			var postfix:string = '';
-			var keys = keys_values.concat(keys_one).map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
+			var keys = keys_values.concat(keys_one).concat(keys_false).map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
 			for (let k of keys) {
 				if (k.label === 'editable') {
 					postfix = '="top"';
@@ -77,6 +78,8 @@ export function activate(context: vscode.ExtensionContext) {
 					postfix = '="$1"';
 				} else if (keys_one.includes(k.label)) {
 					postfix = '="1"';
+				} else if (keys_false.includes(k.label)) {
+					postfix = '="false"';
 				}
 				k.insertText = new vscode.SnippetString(k.label + postfix);
 			}
