@@ -105,7 +105,7 @@
 	"Selection Field": {
 		"prefix": "ofsel",
 		"body": [
-			"$1 = fields.Selection(${0:selection=})"
+			"$1 = fields.Selection($0)"
 		],
 		"description": "Add selection field"
 	},
@@ -133,21 +133,21 @@
 	"Many2one Field": {
 		"prefix": "ofm2o",
 		"body": [
-			"$1 = fields.Many2one('$0')"
+			"$1 = fields.Many2one('$2'$0)"
 		],
 		"description": "Add many2one field"
 	},
 	"One2many Field": {
 		"prefix": "ofo2m",
 		"body": [
-			"$1 = fields.One2many('$0')"
+			"$1 = fields.One2many('$2'$0)"
 		],
 		"description": "Add one2many field"
 	},
 	"Many2many Field": {
 		"prefix": "ofm2m",
 		"body": [
-			"$1 = fields.Many2many('$0')"
+			"$1 = fields.Many2many('$2'$0)"
 		],
 		"description": "Add many2many field"
 	},
