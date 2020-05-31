@@ -67,6 +67,17 @@
 		],
 		"description": "Write method"
 	},
+	"Unlink Method": {
+		"prefix": "ounlink",
+		"body": [
+			"@api.multi",
+			"def unlink(self):",
+			"\tres = super().unlink()",
+			"\t$0",
+			"\treturn res"
+		],
+		"description": "Unlink method"
+	},
 	"Char Field": {
 		"prefix": "ofchar",
 		"body": [
