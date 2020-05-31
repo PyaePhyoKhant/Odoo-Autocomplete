@@ -64,7 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			// keys
-			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs', 'editable'];
+			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs', 'editable', 'default_order'];
 			var keys_one:string[] = ['readonly', 'nolabel', 'invisible', 'noupdate'];
 			var postfix:string = '';
 			var keys = keys_values.concat(keys_one).map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
