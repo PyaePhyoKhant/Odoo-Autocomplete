@@ -45,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			// tags
-			var tags_values:string[] = ['attribute', 'record', 'field', 'button', 'xpath', 'tree', 'form', 'group', 'sheet', 'notebook', 'page', 'search', 'label'];
+			var tags_values:string[] = ['attribute', 'record', 'field', 'button', 'xpath', 'tree', 'form', 'group', 'sheet', 'notebook', 'page', 'search', 'label', 'data'];
 			var tags = tags_values.map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Keyword));
 
 			// return all completion items as array
@@ -65,7 +65,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 			// keys
 			var keys_values:string[] = ['id', 'model', 'name', 'position', 'string', 'colspan', 'col', 'states', 'class', 'type', 'for', 'action', 'widget', 'attrs', 'editable'];
-			var keys_one:string[] = ['readonly', 'nolabel', 'invisible'];
+			var keys_one:string[] = ['readonly', 'nolabel', 'invisible', 'noupdate'];
 			var postfix:string = '';
 			var keys = keys_values.concat(keys_one).map(x => new vscode.CompletionItem(x, vscode.CompletionItemKind.Property));
 			for (let k of keys) {
